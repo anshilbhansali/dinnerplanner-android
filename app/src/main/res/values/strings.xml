@@ -2,7 +2,14 @@
 <resources>
 
     <string name="app_name">DinnerPlanner</string>
-    <string name="hello_world">Hello world!</string>
+    <string name="hello_world">Hello Anshil!</string>
     <string name="action_settings">Settings</string>
+
+    <string name="welcome">Welcome to the Dinner Planner!</string>
+    <string name="here">Here you will be easily able to plan your dinner.</string>
+    <string name="next">On the next page start by selecting number of participants.</string>
+    <string name="courses">Then select your courses.</string>
+    <string name="start">Start</string>
+
 
 </resources>

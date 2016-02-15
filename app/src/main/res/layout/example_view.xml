@@ -1,14 +1,58 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:gravity="center"
-    android:id="@+id/this_is_example_view_id" >
+    android:id="@+id/this_is_example_view_id"
+    android:background="#efdcdc"
+    android:orientation="vertical"
+    android:weightSum="1">
 
     <TextView
-        android:id="@+id/example_text"
+        android:layout_width="334dp"
+        android:layout_height="50dp"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="@string/welcome"
+        android:id="@+id/welcome"/>
+    <TextView
+        android:layout_width="334dp"
+        android:layout_height="0dp"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="@string/here"
+        android:layout_weight="0.12" />
+    <TextView
+        android:layout_width="334dp"
+        android:layout_height="0dp"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="@string/next"
+        android:layout_weight="0.12" />
+    <TextView
+        android:layout_width="334dp"
+        android:layout_height="0dp"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="@string/courses"
+        android:layout_weight="0.08" />
+    <TextView
+        android:layout_width="334dp"
+        android:layout_height="0dp"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Watch Magic Happen!"
+        android:layout_weight="0.09" />
+    <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/hello_world" />
+        android:paddingTop="50dp"/>
 
-</RelativeLayout>
+
+    <Button
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:text="@string/start"
+        android:textSize="25sp"
+        android:id="@+id/start_button"
+        android:background="#f60a0a"
+        android:textColor="#ffffff"/>
+
+
+
+</LinearLayout>
