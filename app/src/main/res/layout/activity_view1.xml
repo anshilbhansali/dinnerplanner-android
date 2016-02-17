@@ -3,13 +3,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#f7dfdf"
-    android:weightSum="1"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:id="@+id/view1_id">
 
     <LinearLayout
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:orientation="horizontal">
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
 
         <TextView
             android:layout_width="wrap_content"
@@ -65,22 +65,25 @@
         android:orientation="horizontal">
 
         <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="@dimen/image_width"
+            android:layout_height="@dimen/image_height"
             android:src="@drawable/toast"
             android:paddingLeft="@dimen/left_padding"
+            android:id="@+id/starter1_img"
             android:clickable="true" />
         <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="@dimen/image_width"
+            android:layout_height="@dimen/image_height"
             android:src="@drawable/sourdough"
             android:paddingLeft="20dp"
+            android:id="@+id/starter2_img"
             android:clickable="true" />
         <ImageView
-            android:layout_width="120dp"
-            android:layout_height="100dp"
+            android:layout_width="@dimen/image_width"
+            android:layout_height="@dimen/image_height"
             android:src="@drawable/ic_launcher"
             android:paddingLeft="20dp"
+            android:id="@+id/starter3_img"
             android:clickable="true" />
 
     </LinearLayout>
@@ -91,21 +94,24 @@
         android:orientation="horizontal">
 
         <TextView
-            android:layout_width="104dp"
+            android:layout_width="110dp"
             android:layout_height="wrap_content"
-            android:text="Toast"
+            android:text="starter1"
+            android:id="@+id/starter1"
             android:paddingLeft="@dimen/left_padding"/>
 
         <TextView
-            android:layout_width="115dp"
+            android:layout_width="110dp"
             android:layout_height="wrap_content"
-            android:text="Sour Dough"
+            android:text="starter2"
+            android:id="@+id/starter2"
             android:paddingLeft="20dp"/>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Spring Rolls"
+            android:text="starter3"
+            android:id="@+id/starter3"
             android:paddingLeft="20dp"/>
 
     </LinearLayout>
@@ -124,24 +130,27 @@
         android:orientation="horizontal">
 
         <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="@dimen/image_width"
+            android:layout_height="@dimen/image_height"
             android:src="@drawable/meatballs"
             android:paddingLeft="@dimen/left_padding"
-            android:clickable="true" />
+            android:clickable="true"
+            android:id="@+id/main1_img" />
         <ImageView
-            android:layout_width="120dp"
-            android:layout_height="100dp"
+            android:layout_width="@dimen/image_width"
+            android:layout_height="@dimen/image_height"
             android:src="@drawable/bakedbrie"
             android:paddingLeft="20dp"
             android:paddingTop="32dp"
-            android:clickable="true" />
+            android:clickable="true"
+            android:id="@+id/main2_img" />
         <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="@dimen/image_width"
+            android:layout_height="@dimen/image_height"
             android:src="@drawable/toast"
             android:paddingLeft="20dp"
-            android:clickable="true" />
+            android:clickable="true"
+            android:id="@+id/main3_img" />
 
     </LinearLayout>
 
@@ -151,22 +160,25 @@
         android:orientation="horizontal">
 
         <TextView
-            android:layout_width="111dp"
+            android:layout_width="110dp"
             android:layout_height="wrap_content"
-            android:text="Meatballs"
-            android:paddingLeft="@dimen/left_padding"/>
+            android:text="main1"
+            android:paddingLeft="@dimen/left_padding"
+            android:id="@+id/main1" />
 
         <TextView
-            android:layout_width="117dp"
+            android:layout_width="110dp"
             android:layout_height="wrap_content"
-            android:text="Baked Brie"
-            android:paddingLeft="20dp"/>
+            android:text="main2"
+            android:paddingLeft="10dp"
+            android:id="@+id/main2" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Fillet Mignon"
-            android:paddingLeft="20dp"/>
+            android:text="main3"
+            android:paddingLeft="10dp"
+            android:id="@+id/main3" />
 
     </LinearLayout>
 
@@ -184,18 +196,20 @@
         android:orientation="horizontal">
 
         <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="@dimen/image_width"
+            android:layout_height="@dimen/image_height"
             android:src="@drawable/icecream"
             android:paddingLeft="@dimen/left_padding"
-            android:clickable="true" />
+            android:clickable="true"
+            android:id="@+id/dessert1_img" />
         <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="@dimen/image_width"
+            android:layout_height="@dimen/image_height"
             android:src="@drawable/toast"
             android:paddingLeft="20dp"
 
-            android:clickable="true" />
+            android:clickable="true"
+            android:id="@+id/dessert2_img" />
 
     </LinearLayout>
 
@@ -207,14 +221,16 @@
         <TextView
             android:layout_width="111dp"
             android:layout_height="wrap_content"
-            android:text="Ice cream"
-            android:paddingLeft="10dp"/>
+            android:text="dessert1"
+            android:paddingLeft="10dp"
+            android:id="@+id/dessert1" />
 
         <TextView
             android:layout_width="117dp"
             android:layout_height="wrap_content"
-            android:text="Baked Brie"
-            android:paddingLeft="20dp"/>
+            android:text="dessert2"
+            android:paddingLeft="20dp"
+            android:id="@+id/dessert2" />
 
     </LinearLayout>
 
@@ -237,3 +253,4 @@
 
 
 </LinearLayout>
+

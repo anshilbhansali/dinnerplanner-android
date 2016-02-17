@@ -10,6 +10,8 @@
     <string name="next">On the next page start by selecting number of participants.</string>
     <string name="courses">Then select your courses.</string>
     <string name="start">Start</string>
+    <string name="title_activity_view2">DinnerPlanner</string>
+    <string name="title_activity_view1">DinnerPlanner</string>
 
 
 </resources>

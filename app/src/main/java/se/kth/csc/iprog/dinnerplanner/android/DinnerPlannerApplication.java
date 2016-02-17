@@ -6,7 +6,7 @@ import se.kth.csc.iprog.dinnerplanner.model.DinnerModel;
 
 public class DinnerPlannerApplication extends Application {
 	
-	private DinnerModel model = new DinnerModel();
+	private DinnerModel model = new DinnerModel(this);
 
 	public DinnerModel getModel() {
 		return model;

@@ -1,0 +1,119 @@
+package se.kth.csc.iprog.dinnerplanner.android.view;
+
+
+import android.app.Activity;
+import android.view.View;
+import android.widget.ImageView;
+import android.widget.NumberPicker;
+import android.widget.TextView;
+import se.kth.csc.iprog.dinnerplanner.model.DinnerModel;
+import se.kth.csc.iprog.dinnerplanner.android.DinnerPlannerApplication;
+import android.app.Application;
+import java.util.Set;
+
+
+import se.kth.csc.iprog.dinnerplanner.android.R;
+import se.kth.csc.iprog.dinnerplanner.model.Dish;
+
+
+public class ActivityView1 {
+    View view;
+
+    public ActivityView1(View view, Activity activity) {
+
+        // store in the class the reference to the Android View
+        this.view = view;
+
+        DinnerModel model = ((DinnerPlannerApplication) activity.getApplication()).getModel();
+
+        Set<Dish> all_starters = model.getDishesOfType(Dish.STARTER);
+        Set<Dish> all_maincourses = model.getDishesOfType(Dish.MAIN);
+        Set<Dish> all_desserts = model.getDishesOfType(Dish.DESERT);
+
+        //need to set number of guests from user input
+        NumberPicker guests = (NumberPicker)view.findViewById(R.id.numberPicker);
+        model.setNumberOfGuests(guests.getValue());
+
+
+        //put STARTERS in arrays
+        Dish[] arr = new Dish[all_starters.size()];
+        int i=0;
+        for(Dish s : all_starters)
+        {
+            arr[i] = s;
+            i++;
+        }
+        //setting strings of dishes names
+        TextView starter = (TextView) view.findViewById(R.id.starter1);
+        starter.setText(arr[0].getName());
+
+        starter = (TextView) view.findViewById(R.id.starter2);
+        starter.setText(arr[1].getName());
+
+        starter = (TextView) view.findViewById(R.id.starter3);
+        starter.setText(arr[2].getName());
+
+        //set images
+        ImageView starter_img = (ImageView) view.findViewById(R.id.starter1_img);
+        starter_img.setImageDrawable(model.getDrawable(arr[0].getImage()));
+
+        starter_img = (ImageView) view.findViewById(R.id.starter2_img);
+        starter_img.setImageDrawable(model.getDrawable(arr[1].getImage()));
+
+        starter_img = (ImageView) view.findViewById(R.id.starter3_img);
+        starter_img.setImageDrawable(model.getDrawable(arr[2].getImage()));
+
+
+
+        //put MAINCOURSES in arrays
+        i=0;
+        for(Dish s : all_maincourses)
+        {
+            arr[i] = s;
+            i++;
+        }
+        //setting strings of dishes names
+        TextView main = (TextView) view.findViewById(R.id.main1);
+        main.setText(arr[0].getName());
+
+        main = (TextView) view.findViewById(R.id.main2);
+        main.setText(arr[1].getName());
+
+        main = (TextView) view.findViewById(R.id.main3);
+        main.setText(arr[2].getName());
+
+        //set images
+        ImageView main_img = (ImageView) view.findViewById(R.id.main1_img);
+        main_img.setImageDrawable(model.getDrawable(arr[0].getImage()));
+
+        main_img = (ImageView) view.findViewById(R.id.main2_img);
+        main_img.setImageDrawable(model.getDrawable(arr[1].getImage()));
+
+        main_img = (ImageView) view.findViewById(R.id.main3_img);
+        main_img.setImageDrawable(model.getDrawable(arr[2].getImage()));
+
+        //put DESSERTS in arrays
+        i=0;
+        for(Dish s : all_desserts)
+        {
+            arr[i] = s;
+            i++;
+        }
+        //setting strings of dishes names
+        TextView dessert = (TextView) view.findViewById(R.id.dessert1);
+        dessert.setText(arr[0].getName());
+
+        dessert = (TextView) view.findViewById(R.id.dessert2);
+        dessert.setText(arr[1].getName());
+
+        //set images
+        ImageView dessert_img = (ImageView) view.findViewById(R.id.dessert1_img);
+        dessert_img.setImageDrawable(model.getDrawable(arr[0].getImage()));
+
+        dessert_img = (ImageView) view.findViewById(R.id.dessert2_img);
+        dessert_img.setImageDrawable(model.getDrawable(arr[1].getImage()));
+
+
+    }
+
+}

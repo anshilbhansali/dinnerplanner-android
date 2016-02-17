@@ -1,5 +1,7 @@
 package se.kth.csc.iprog.dinnerplanner.model;
 
+import android.graphics.drawable.Drawable;
+
 import java.util.HashSet;
 import java.util.Set;
 
@@ -13,6 +15,7 @@ public class Dish {
 	int type; // starter (1), main (2) or desert (3)  
 	String image;
 	String description;
+
 	
 	Set<Ingredient> ingredients = new HashSet<Ingredient>();
 	
@@ -21,6 +24,7 @@ public class Dish {
 		this.type = type;
 		this.image = image;
 		this.description = description;
+
 	}
 	
 	public String getName() {
