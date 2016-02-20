@@ -15,6 +15,7 @@ public class Dish {
 	int type; // starter (1), main (2) or desert (3)  
 	String image;
 	String description;
+	float costPerPerson;
 
 	
 	Set<Ingredient> ingredients = new HashSet<Ingredient>();
@@ -75,5 +76,29 @@ public class Dish {
 		}
 		return false;
 	}
+
+	public float getCost()
+	{
+		float cost = 0;
+
+		for(Ingredient e : ingredients)
+		{
+			cost += e.getPrice();
+		}
+
+		return cost;
+	}
+
+	public void setCostPerPerson(float cost)
+	{
+		costPerPerson = cost;
+	}
+
+	public float getCostPerPerson()
+	{
+		return costPerPerson;
+	}
+
+
 
 }

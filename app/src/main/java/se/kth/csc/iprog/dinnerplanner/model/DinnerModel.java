@@ -303,6 +303,18 @@ public class DinnerModel implements IDinnerModel{
 		selected_dishes.remove(dish);
 	}
 
+	//sets cost per person for each dish in dish object
+	public void setCostperDishperPerson()
+	{
+		float costPerPerson;
+		for(Dish d : dishes)
+		{
+			costPerPerson = d.getCost()/num_guests;
+			d.setCostPerPerson(costPerPerson);
+		}
+	}
+
+
 
 
 }
