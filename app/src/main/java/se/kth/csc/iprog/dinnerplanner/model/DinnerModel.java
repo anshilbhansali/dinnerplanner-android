@@ -9,10 +9,11 @@ import java.util.HashSet;
 import java.util.Set;
 import android.content.res.Resources;
 import android.content.pm.PackageManager;
+import java.util.Observable;
 
 import se.kth.csc.iprog.dinnerplanner.android.R;
 
-public class DinnerModel implements IDinnerModel{
+public class DinnerModel extends Observable implements IDinnerModel{
 	
 	//all dishes
 	Set<Dish> dishes = new HashSet<Dish>();
@@ -21,7 +22,7 @@ public class DinnerModel implements IDinnerModel{
 	int num_guests;
 
 	{
-		num_guests = 0;
+		num_guests = 5;
 	}
 
 	//selected dishes on menu
@@ -47,6 +48,7 @@ public class DinnerModel implements IDinnerModel{
 		dish1.addIngredient(dish1ing4);
 		dish1.addIngredient(dish1ing5);
 		dishes.add(dish1);
+		//selected_dishes.add(dish1);
 
 
 		Dish dish2 = new Dish("Spring Rolls",Dish.STARTER,"drawable/toast","In a large mixing bowl, beat the eggs. Add the milk, brown sugar and nutmeg; stir well to combine. Soak bread slices in the egg mixture until saturated. Heat a lightly oiled griddle or frying pan over medium high heat. Brown slices on both sides, sprinkle with cinnamon and serve hot.");
@@ -75,7 +77,7 @@ public class DinnerModel implements IDinnerModel{
 		dish3.addIngredient(dish3ing4);
 		dish3.addIngredient(dish3ing5);
 		dishes.add(dish3);
-		selected_dishes.add(dish3);
+		//selected_dishes.add(dish3);
 
 		Dish dish4 = new Dish("Meat balls",Dish.MAIN,"drawable/meatballs","Preheat an oven to 400 degrees F (200 degrees C). Place the beef into a mixing bowl, and season with salt, onion, garlic salt, Italian seasoning, oregano, red pepper flakes, hot pepper sauce, and Worcestershire sauce; mix well. Add the milk, Parmesan cheese, and bread crumbs. Mix until evenly blended, then form into 1 1/2-inch meatballs, and place onto a baking sheet. Bake in the preheated oven until no longer pink in the center, 20 to 25 minutes.");
 		Ingredient dish4ing1 = new Ingredient("extra lean ground beef",115,"g",20);
@@ -101,6 +103,7 @@ public class DinnerModel implements IDinnerModel{
 		dish4.addIngredient(dish4ing10);
 		dish4.addIngredient(dish4ing11);
 		dishes.add(dish4);
+		//selected_dishes.add(dish4);
 
 		Dish dish5 = new Dish("Baked Brie",Dish.MAIN,"drawable/meatballs","In a large mixing bowl, beat the eggs. Add the milk, brown sugar and nutmeg; stir well to combine. Soak bread slices in the egg mixture until saturated. Heat a lightly oiled griddle or frying pan over medium high heat. Brown slices on both sides, sprinkle with cinnamon and serve hot.");
 		Ingredient dish5ing1 = new Ingredient("eggs",0.5,"",1);
@@ -127,7 +130,7 @@ public class DinnerModel implements IDinnerModel{
 		dish6.addIngredient(dish6ing4);
 		dish6.addIngredient(dish6ing5);
 		dishes.add(dish6);
-		selected_dishes.add(dish6);
+		//selected_dishes.add(dish6);
 
 		Dish dish7 = new Dish("Ice cream",Dish.DESERT,"drawable/icecream","In a large mixing bowl, beat the eggs. Add the milk, brown sugar and nutmeg; stir well to combine. Soak bread slices in the egg mixture until saturated. Heat a lightly oiled griddle or frying pan over medium high heat. Brown slices on both sides, sprinkle with cinnamon and serve hot.");
 		Ingredient dish7ing1 = new Ingredient("eggs",0.5,"",1);
@@ -141,20 +144,21 @@ public class DinnerModel implements IDinnerModel{
 		dish7.addIngredient(dish7ing4);
 		dish7.addIngredient(dish7ing5);
 		dishes.add(dish7);
+		//selected_dishes.add(dish7);
 
 		Dish dish8 = new Dish("Panna Cotta",Dish.DESERT,"drawable/icecream","In a large mixing bowl, beat the eggs. Add the milk, brown sugar and nutmeg; stir well to combine. Soak bread slices in the egg mixture until saturated. Heat a lightly oiled griddle or frying pan over medium high heat. Brown slices on both sides, sprinkle with cinnamon and serve hot.");
 		Ingredient dish8ing1 = new Ingredient("eggs",0.5,"",1);
-		Ingredient dish8ing2 = new Ingredient("milk",30,"ml",6);
-		Ingredient dish8ing3 = new Ingredient("brown sugar",7,"g",1);
+		Ingredient dish8ing2 = new Ingredient("milk",32,"ml",6);
+		Ingredient dish8ing3 = new Ingredient("brown sugar",7,"g",5);
 		Ingredient dish8ing4 = new Ingredient("ground nutmeg",0.5,"g",12);
-		Ingredient dish8ing5 = new Ingredient("white bread",2,"slices",2);
+		Ingredient dish8ing5 = new Ingredient("white bread",4,"slices",2);
 		dish7.addIngredient(dish8ing1);
 		dish7.addIngredient(dish8ing2);
 		dish7.addIngredient(dish8ing3);
 		dish7.addIngredient(dish8ing4);
 		dish7.addIngredient(dish8ing5);
 		dishes.add(dish8);
-		selected_dishes.add(dish8);
+		//selected_dishes.add(dish8);
 
 
 		
@@ -210,7 +214,10 @@ public class DinnerModel implements IDinnerModel{
 
 	public void setNumberOfGuests(int numberOfGuests)
 	{
+
 		num_guests = numberOfGuests;
+		setChanged();
+		notifyObservers(this);
 	}
 
 	/**
@@ -293,6 +300,8 @@ public class DinnerModel implements IDinnerModel{
 			selected_dishes.remove(dish_to_remove);
 			selected_dishes.add(dish);
 		}
+		setChanged();
+		notifyObservers(this);
 	}
 
 	/**
@@ -300,7 +309,10 @@ public class DinnerModel implements IDinnerModel{
 	 */
 	public void removeDishFromMenu(Dish dish)
 	{
+
 		selected_dishes.remove(dish);
+		setChanged();
+		notifyObservers(this);
 	}
 
 	//sets cost per person for each dish in dish object

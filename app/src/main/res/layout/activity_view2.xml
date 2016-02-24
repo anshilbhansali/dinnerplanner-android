@@ -29,7 +29,8 @@
             android:textSize="20sp"
             android:background="#fb0000"
             android:textColor="#ffffff"
-            android:textStyle="bold">
+            android:textStyle="bold"
+            android:id="@+id/back_b">
 
         </Button>
 
@@ -83,7 +84,8 @@
                 android:layout_width="70dp"
                 android:layout_height="60dp"
                 android:background="#b1b4b1"
-                android:src="@android:color/holo_green_light" />
+                android:src="@android:color/holo_green_light"
+                android:id="@+id/selected_ingredients_img"/>
 
             <TextView
                 android:layout_width="wrap_content"
@@ -194,7 +196,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Main Course"
+            android:text=""
             android:paddingLeft="30dp"
             android:textSize="30sp"
             android:textStyle="bold"
@@ -203,20 +205,18 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="name of dish"
+        android:text=""
         android:textSize="20sp"
         android:textStyle="bold"
-        android:paddingTop="20dp"
-        android:paddingBottom="20dp"
         android:paddingLeft="30dp"
         android:id="@+id/type_dish_name" />
 
     <TextView
-        android:layout_width="300dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="instructions"
+        android:text=""
         android:paddingLeft="30dp"
-        android:textSize="20sp"
+        android:textSize="15sp"
         android:id="@+id/type_dish_instr" />
 
 </LinearLayout>

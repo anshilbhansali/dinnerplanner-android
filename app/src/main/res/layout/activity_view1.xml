@@ -21,22 +21,31 @@
             android:paddingTop="10dp"
             android:paddingLeft="@dimen/left_padding" />
 
-        <NumberPicker
+        <EditText
             android:layout_width="wrap_content"
-            android:layout_height="35dp"
-            android:id="@+id/numberPicker"
-            android:paddingTop="10dp"
-            android:paddingLeft="5dp"
-            android:orientation="vertical" />
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:id="@+id/num_guests"/>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceMedium"
-            android:text="Total Cost: 0 kr"
+            android:text="Total Cost:"
             android:textSize="20sp"
             android:id="@+id/textView3"
-            android:paddingLeft="20dp"/>
+            android:paddingLeft="10dp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0 "
+            android:textSize="20sp"
+            android:id="@+id/cost_view1"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="kr"
+            android:textSize="20sp"/>
     </LinearLayout>
 
 
@@ -46,8 +55,7 @@
         android:layout_height="wrap_content"
         android:text="Choose Menu"
         android:textSize="25dp"
-        android:paddingTop="5dp"
-        android:paddingLeft="20dp"
+        android:layout_marginLeft="30dp"
         android:textStyle="bold" />
 
 
@@ -66,21 +74,21 @@
 
         <ImageView
             android:layout_width="@dimen/image_width"
-            android:layout_height="@dimen/image_height"
+            android:layout_height="90dp"
             android:src="@drawable/toast"
             android:paddingLeft="@dimen/left_padding"
             android:id="@+id/starter1_img"
             android:clickable="true" />
         <ImageView
             android:layout_width="@dimen/image_width"
-            android:layout_height="@dimen/image_height"
+            android:layout_height="90dp"
             android:src="@drawable/sourdough"
             android:paddingLeft="20dp"
             android:id="@+id/starter2_img"
             android:clickable="true" />
         <ImageView
             android:layout_width="@dimen/image_width"
-            android:layout_height="@dimen/image_height"
+            android:layout_height="90dp"
             android:src="@drawable/ic_launcher"
             android:paddingLeft="20dp"
             android:id="@+id/starter3_img"
@@ -131,22 +139,22 @@
 
         <ImageView
             android:layout_width="@dimen/image_width"
-            android:layout_height="@dimen/image_height"
+            android:layout_height="90dp"
             android:src="@drawable/meatballs"
             android:paddingLeft="@dimen/left_padding"
             android:clickable="true"
             android:id="@+id/main1_img" />
         <ImageView
             android:layout_width="@dimen/image_width"
-            android:layout_height="@dimen/image_height"
+            android:layout_height="90dp"
             android:src="@drawable/bakedbrie"
-            android:paddingLeft="20dp"
-            android:paddingTop="32dp"
+            android:layout_marginLeft="10dp"
+            android:paddingTop="0dp"
             android:clickable="true"
             android:id="@+id/main2_img" />
         <ImageView
             android:layout_width="@dimen/image_width"
-            android:layout_height="@dimen/image_height"
+            android:layout_height="90dp"
             android:src="@drawable/toast"
             android:paddingLeft="20dp"
             android:clickable="true"
@@ -248,7 +256,8 @@
             android:layout_height="30dp"
             android:text="Create"
             android:background="#f40b0b"
-            android:textColor="#ffffff" />
+            android:textColor="#ffffff"
+            android:id="@+id/create_b"/>
     </LinearLayout>
 
 
