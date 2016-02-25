@@ -7,8 +7,6 @@ import android.app.Activity;
 import android.content.Intent;
 import android.view.View.OnClickListener;
 import android.view.View;
-import android.widget.ImageView;
-import android.widget.NumberPicker;
 import android.widget.TextView;
 import se.kth.csc.iprog.dinnerplanner.model.DinnerModel;
 import se.kth.csc.iprog.dinnerplanner.android.view1;
@@ -51,13 +49,6 @@ public class ActivityView2Controller implements OnClickListener {
         Dish des = model.getSelectedDish(Dish.DESERT);
         Set<Ingredient> all_ingr = model.getAllIngredients();
 
-        Ingredient[] ingr = new Ingredient[all_ingr.size()];
-        int j=0;
-        for(Ingredient i : all_ingr)
-        {
-            ingr[j] = i;
-        }
-
         //things to change
         TextView head = view.header;
         TextView name = view.name_dish;
@@ -91,7 +82,7 @@ public class ActivityView2Controller implements OnClickListener {
         {
             head.setText("Ingredients");
             name.setText("");
-            //String str = ingr[0].getName()+" "+ingr[0].getQuantity()+ingr[0].getUnit();
+
             String str="";
             for(Ingredient i : all_ingr)
             {

@@ -6,7 +6,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
-import android.widget.NumberPicker;
 import android.widget.TextView;
 import se.kth.csc.iprog.dinnerplanner.model.DinnerModel;
 import se.kth.csc.iprog.dinnerplanner.android.DinnerPlannerApplication;
@@ -51,7 +50,8 @@ public class ActivityView1 implements Observer{
         int g=0;
         if(st.length()>0)
             g = Integer.parseInt(st);
-        model.setNumberOfGuests(g);
+        //model.setNumberOfGuests(g);
+        model.setCostperDishperPerson();
 
 
         //cost
@@ -160,6 +160,7 @@ public class ActivityView1 implements Observer{
         float cost = model.getTotalMenuPrice();
         TextView t_cost = (TextView) view.findViewById(R.id.cost_view1);
         t_cost.setText("" + cost);
+
     }
 
 

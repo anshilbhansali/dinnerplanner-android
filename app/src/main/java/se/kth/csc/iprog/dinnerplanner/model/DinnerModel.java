@@ -22,7 +22,7 @@ public class DinnerModel extends Observable implements IDinnerModel{
 	int num_guests;
 
 	{
-		num_guests = 5;
+		num_guests = 2;
 	}
 
 	//selected dishes on menu
@@ -148,15 +148,15 @@ public class DinnerModel extends Observable implements IDinnerModel{
 
 		Dish dish8 = new Dish("Panna Cotta",Dish.DESERT,"drawable/icecream","In a large mixing bowl, beat the eggs. Add the milk, brown sugar and nutmeg; stir well to combine. Soak bread slices in the egg mixture until saturated. Heat a lightly oiled griddle or frying pan over medium high heat. Brown slices on both sides, sprinkle with cinnamon and serve hot.");
 		Ingredient dish8ing1 = new Ingredient("eggs",0.5,"",1);
-		Ingredient dish8ing2 = new Ingredient("milk",32,"ml",6);
+		Ingredient dish8ing2 = new Ingredient("milk",32,"ml",3);
 		Ingredient dish8ing3 = new Ingredient("brown sugar",7,"g",5);
 		Ingredient dish8ing4 = new Ingredient("ground nutmeg",0.5,"g",12);
 		Ingredient dish8ing5 = new Ingredient("white bread",4,"slices",2);
-		dish7.addIngredient(dish8ing1);
-		dish7.addIngredient(dish8ing2);
-		dish7.addIngredient(dish8ing3);
-		dish7.addIngredient(dish8ing4);
-		dish7.addIngredient(dish8ing5);
+		dish8.addIngredient(dish8ing1);
+		dish8.addIngredient(dish8ing2);
+		dish8.addIngredient(dish8ing3);
+		dish8.addIngredient(dish8ing4);
+		dish8.addIngredient(dish8ing5);
 		dishes.add(dish8);
 		//selected_dishes.add(dish8);
 
@@ -318,7 +318,7 @@ public class DinnerModel extends Observable implements IDinnerModel{
 	//sets cost per person for each dish in dish object
 	public void setCostperDishperPerson()
 	{
-		float costPerPerson;
+		float costPerPerson=0;
 		for(Dish d : dishes)
 		{
 			costPerPerson = d.getCost()/num_guests;
