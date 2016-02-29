@@ -25,19 +25,20 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:inputType="number"
-            android:id="@+id/num_guests"/>
+            android:id="@+id/num_guests"
+            android:autoText="false" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceMedium"
-            android:text="Total Cost:"
+            android:text="Cost/person:"
             android:textSize="20sp"
             android:id="@+id/textView3"
             android:paddingLeft="10dp"/>
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="40dp"
+            android:layout_height="25dp"
             android:text="0 "
             android:textSize="20sp"
             android:id="@+id/cost_view1"/>

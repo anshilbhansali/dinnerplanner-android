@@ -16,7 +16,9 @@ public class view2 extends Activity {
 
         //create instance of ActivityView1 class
         DinnerModel model = ((DinnerPlannerApplication) this.getApplication()).getModel();
+
         ActivityView2 view2 = new ActivityView2(findViewById(R.id.view2_id), this);
+
         ActivityView2Controller c = new ActivityView2Controller(model, view2, this);
     }
 

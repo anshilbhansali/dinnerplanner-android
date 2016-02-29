@@ -22,7 +22,7 @@ public class DinnerModel extends Observable implements IDinnerModel{
 	int num_guests;
 
 	{
-		num_guests = 2;
+		num_guests = 1;
 	}
 
 	//selected dishes on menu

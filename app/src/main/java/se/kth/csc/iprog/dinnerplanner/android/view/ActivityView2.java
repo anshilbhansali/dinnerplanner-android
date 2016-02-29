@@ -79,15 +79,5 @@ public class ActivityView2 {
         dessert_ = dessert_img;
         dessert_img.setImageDrawable(model.getDrawable(dessert.getImage()));
 
-
-        //assuming user clicks on main
-        /*TextView name = (TextView)view.findViewById(R.id.type_dish_name);
-        name.setText(main.getName());
-
-        TextView instr = (TextView)view.findViewById(R.id.type_dish_instr);
-        instr.setText(main.getDescription());*/
-
-
-
     }
 }

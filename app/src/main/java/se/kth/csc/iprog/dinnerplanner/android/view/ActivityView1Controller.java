@@ -42,6 +42,7 @@ public class ActivityView1Controller implements OnClickListener{
         view.dessert_img_1.setOnClickListener(this);
         view.dessert_img_2.setOnClickListener(this);
         view.create.setOnClickListener(this);
+        view.num_guests.setOnClickListener(this);
 
     }
 
@@ -53,6 +54,15 @@ public class ActivityView1Controller implements OnClickListener{
         {
             Intent i = new Intent(act, view2.class);
             act.startActivity(i);
+        }
+        else if(v == view.num_guests)
+        {
+            String st = view.num_guests.getText().toString();
+            int g=0;
+            if(st.length()>0)
+                g = Integer.parseInt(st);
+            model.setNumberOfGuests(g);
+            model.setCostperDishperPerson();
         }
         else showDialog(v);
 

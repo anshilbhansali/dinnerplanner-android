@@ -7,6 +7,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.view.View.OnClickListener;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.TextView;
 import se.kth.csc.iprog.dinnerplanner.model.DinnerModel;
 import se.kth.csc.iprog.dinnerplanner.android.view1;
@@ -56,6 +57,7 @@ public class ActivityView2Controller implements OnClickListener {
 
         if(v == view.back)
         {
+            //switch to new ativity
             Intent i = new Intent(act, view1.class);
             act.startActivity(i);
 
@@ -80,8 +82,10 @@ public class ActivityView2Controller implements OnClickListener {
         }
         else if(v == view.ingr_)
         {
+            int num = model.getNumberOfGuests();
             head.setText("Ingredients");
             name.setText("");
+
 
             String str="";
             for(Ingredient i : all_ingr)

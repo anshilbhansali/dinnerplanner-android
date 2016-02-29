@@ -27,6 +27,7 @@ public class ActivityView1 implements Observer{
     ImageView dessert_img_1;
     ImageView dessert_img_2;
     Button create;
+    EditText num_guests;
 
 
 
@@ -46,22 +47,23 @@ public class ActivityView1 implements Observer{
 
         //need to set number of guests from user input
         EditText guests = (EditText)view.findViewById(R.id.num_guests);
-        String st = guests.getText().toString();
-        int g=0;
-        if(st.length()>0)
-            g = Integer.parseInt(st);
-        //model.setNumberOfGuests(g);
-        model.setCostperDishperPerson();
+        guests.setText(""+model.getNumberOfGuests());
+        num_guests = guests;
+
 
 
         //cost
         float cost = model.getTotalMenuPrice();
         TextView t_cost = (TextView) view.findViewById(R.id.cost_view1);
-        t_cost.setText("" + cost);
+        int num = model.getNumberOfGuests();
+        float cost_per = cost/num;
+        t_cost.setText("" + cost_per);
+
 
         //create button
         Button b = (Button)view.findViewById(R.id.create_b);
         create = b;
+
 
 
         //put STARTERS in arrays
@@ -159,9 +161,14 @@ public class ActivityView1 implements Observer{
         //cost
         float cost = model.getTotalMenuPrice();
         TextView t_cost = (TextView) view.findViewById(R.id.cost_view1);
-        t_cost.setText("" + cost);
+        int num = model.getNumberOfGuests();
+        float cost_per = cost/num;
+        t_cost.setText("" + cost_per);
 
     }
+
+
+
 
 
 }
